@@ -9,6 +9,10 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          ref: master
       - name: Sync upstream changes
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
         with:
